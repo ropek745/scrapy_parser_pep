@@ -32,5 +32,3 @@ class PepParsePipeline:
             for status, count in self.summary_statuses.items():
                 writer.writerow([status, count])
             writer.writerow([TOTAL_ROW, sum(self.summary_statuses.values())])
-
-
