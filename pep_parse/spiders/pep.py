@@ -6,7 +6,7 @@ from pep_parse.settings import PEP_DOMAIN, PEP_URL, SPIDER_NAME
 
 class PepSpider(scrapy.Spider):
     name = SPIDER_NAME
-    allowed_domains = [PEP_DOMAIN]
+    allowed_domains = [PEP_DOMAIN, ]
     start_urls = [PEP_URL]
 
     def parse(self, response):
