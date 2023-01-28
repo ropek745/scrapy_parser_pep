@@ -2,7 +2,7 @@ from pathlib import Path
 
 BOT_NAME = 'pep_parse'
 PEP_DOMAIN = 'peps.python.org'
-PEP_URL = 'https://peps.python.org/'
+PEP_URL = f'https://{PEP_DOMAIN}/'
 SPIDER_NAME = 'pep'
 
 RESULT_DIR = 'results'
