@@ -5,7 +5,8 @@ import scrapy
 from pep_parse.items import PepParseItem
 from pep_parse.settings import PEP_DOMAIN, PEP_URL, SPIDER_NAME
 
-PATTERN = '(?P<number>\d+).–.(?P<name>.*)'
+PATTERN = r'(?P<number>\d+).–.(?P<name>.*)'
+
 
 class PepSpider(scrapy.Spider):
     name = SPIDER_NAME
@@ -14,7 +15,7 @@ class PepSpider(scrapy.Spider):
 
     def parse(self, response):
         for link in response.css(
-            '#numerical-index a.pep.reference.internal::attr(href)'
+                '#numerical-index a.pep.reference.internal::attr(href)'
         ).getall():
             yield response.follow(link, callback=self.parse_pep)
 
