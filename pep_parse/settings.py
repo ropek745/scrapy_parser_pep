@@ -6,7 +6,7 @@ PEP_URL = f'https://{PEP_DOMAIN}/'
 SPIDER_NAME = 'pep'
 
 RESULT_DIR = 'results'
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).parent.parent
 
 SPIDER_MODULES = [f'{BOT_NAME}.spiders']
 NEWSPIDER_MODULE = f'{BOT_NAME}.spiders'

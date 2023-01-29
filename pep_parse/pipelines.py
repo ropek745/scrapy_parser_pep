@@ -6,7 +6,7 @@ from pep_parse.settings import BASE_DIR, RESULT_DIR
 
 HEADERS_PEP_TABLE = ('Статус', 'Количество')
 TIME_FORMAT = '%Y-%m-%dT%H-%M-%S'
-TOTAL_STATUSES = 'Total'
+TOTAL_STATUSES = 'Итого'
 FILE_NAME = 'status_summary_{datetime}.csv'
 
 
@@ -29,7 +29,7 @@ class PepParsePipeline:
             mode='w',
             encoding='utf-8'
         ) as file:
-            csv.writer(file).writerows([
+            csv.writer(file, dialect=csv.unix_dialect).writerows([
                 HEADERS_PEP_TABLE,
                 *(self.status_count.items()),
                 [TOTAL_STATUSES, sum(self.status_count.values())]
